@@ -1,9 +1,15 @@
+from hashtable import HashTable
+
+hash = HashTable(1024)
 def intersection(arrays):
     """
     YOUR CODE HERE
     """
     # Your code here
-
+    arrs = sorted(arrays, key=len)
+    for arr in arrs:
+        for i in arr:
+            if 
     return result
 
 
