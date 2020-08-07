@@ -56,13 +56,11 @@ class HashTable:
         Implement this, and/or FNV-1.
         """
         # Your code here
-        if isinstance(key, str):
-            hash = 5381
-            for c in key:
-                hash = ((hash << 5) + hash) ^ ord(c) & 0xffffffff
-        else:
-            hash = 5381
-            hash = ((hash << 5) + hash) ^ key & 0xffffffff
+        if not isinstance(key, str):
+            key = str(key)
+        hash = 5381
+        for c in key:
+            hash = ((hash << 5) + hash) ^ ord(c) & 0xffffffff
         return hash
 
 
