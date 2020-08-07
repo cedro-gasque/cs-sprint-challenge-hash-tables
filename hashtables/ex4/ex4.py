@@ -1,20 +1,18 @@
-from hashtable import HashTable
-
-hash = HashTable(1024)
 def has_negatives(a):
-    hash = HashTable(1024)
+    hash = dict()
     """
     YOUR CODE HERE
     """
     # Your code here
     result = []
     for n in a:
-        pair = hash.get(str(- n))
-        if pair:
-            result.push(abs(pair))
+        if n in hash:
+            v = max(n, hash[n])
+            if not v in result:
+                result.append(max(n, hash[n]))
         else:
-            hash.put(str(n), True)
-    return None
+            hash[-n] = n
+    return result
 
 
 

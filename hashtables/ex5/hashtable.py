@@ -81,15 +81,12 @@ class HashTable:
         Implement this.
         """
         index = self.hash_index(key)
-        node = None#self.table[index].get(key)
+        node = self.table[index].get(key)
         if node:
             node.key = key
             node.value = value
         else:
             self.table[index].add_to_tail(key, value)
-
-            if self.count % 1000 == 0:
-                print(self.count)
             self.count += 1
         if self.get_load_factor() > 0.7:
             self.resize(self.capacity * 2)

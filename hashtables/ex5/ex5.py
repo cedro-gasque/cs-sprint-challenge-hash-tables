@@ -1,8 +1,8 @@
 # Your code here
-
-
+from hashtable import HashTable
 
 def finder(files, queries):
+    hash = HashTable(2 ** 21)
     """
     YOUR CODE HERE
     """
